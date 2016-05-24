@@ -1,0 +1,17 @@
+plugins {
+    id 'org.spongepowered.plugin' version '0.5.2'
+}
+
+group = 'com.akpwebdesign.sponge.MineSpeeder'
+version = '1.0-SNAPSHOT'
+description = 'Makes minecarts faster.'
+
+dependencies {
+    compile 'org.spongepowered:spongeapi:4.1.0-SNAPSHOT'
+}
+
+sponge {
+    plugin {
+        id = 'com.akpwebdesign.minespeeder'
+    }
+}
