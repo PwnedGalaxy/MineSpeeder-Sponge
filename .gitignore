@@ -49,3 +49,9 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
+# gradle
+.gradle/
+
+# another build folder
+build/
