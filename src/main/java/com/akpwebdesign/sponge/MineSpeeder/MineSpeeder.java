@@ -1,6 +1,7 @@
 package com.akpwebdesign.sponge.MineSpeeder;
 
 import org.slf4j.Logger;
+import org.spongepowered.api.Sponge;
 import org.spongepowered.api.entity.EntityTypes;
 import org.spongepowered.api.entity.vehicle.minecart.RideableMinecart;
 import org.spongepowered.api.event.Listener;
@@ -8,6 +9,7 @@ import org.spongepowered.api.event.entity.MountEntityEvent;
 import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 import org.spongepowered.api.plugin.Plugin;
 
+import com.akpwebdesign.sponge.MineSpeeder.commands.SetSpeedCommand;
 import com.google.inject.Inject;
 
 @Plugin(id = "com.akpwebdesign.minespeeder", name = "MineSpeeder", version = "1.0")
@@ -37,6 +39,8 @@ public class MineSpeeder {
 
     public void setMaxSwiftness(double maxSwiftness) {
         this.maxSwiftness = maxSwiftness;
+        
+        //TODO: save to config here.
     }
     
     @Listener
@@ -61,6 +65,6 @@ public class MineSpeeder {
      * TODO: Have commands to register lol
      */
     private void registerCommands() {
-        
+        Sponge.getCommandManager().register(this, SetSpeedCommand.commandSpec, "minespeeder", "setminecartspeed");
     }
 }
